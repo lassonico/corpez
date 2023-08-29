@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nicola Andres Lasso @soynico.click">
+  <title>Solicitud de crédito</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<a href="https://www.corpezconstrucciones.co" class="volver">
+  <img src="arrow.svg" class="arrowleft" alt="">
+  <p>Volver</p>
+</a>
+<div class="formulario-container" >
+  <div id="formulario-corpez"></div>
+  <img src="logo-corpez-web.png" alt="logotipo de la empresa">
+  <h1>Formulario de solicitud</h1>
+  <p>Diligencia tus datos para tu solicitud de crédito</p>
+  <form id="transactionForm" autocomplete="off">
+    <div class="content-parinput">
+        <div class="input-wrapper-content">
+          <input
+            type="text"
+            id="nombre"
+            autocomplete="off"
+            pattern="^[A-Za-z\s]+$"
+            name="nombre"
+            maxlength="30"
+            required
+            placeholder=" "
+          >
+          <label for="monto">Ingresa tu nombre *</label>
+          <div class="error-nombre"></div>
+        </div>
+  
+        <div class="input-wrapper-content">
+          <input
+            type="text" 
+            id="apellido"
+            autocomplete="off"
+            pattern="^[A-Za-z\s]+$"
+            name="apellido"
+            maxlength="30"
+            required
+            placeholder=" "
+          >
+          <label for="apellido">Ingresa tu apellido *</label>
+          <div class="error-apellido"></div>
+        </div>
+      </div>
+
+      <div class="content-parinput">
+        <div class="input-wrapper-content">
+          <label class="label" for="tipoDoc"></label>
+          <select
+            id="tipoDoc"
+            name="documentoSeleccionado"
+            required
+          >
+            <option value="">tipo de documento</option>
+            <option value="cedula">Cedula de ciudadanía</option>
+            <option value="ce">Cédula de extranjería</option>
+            <option value="nit">Nit <span>(Sin digito de verificación)</span></option>
+          </select>
+          <div class="error-documento"></div>
+        </div>
+        <div class="input-wrapper-content">
+          <input
+            type="text"
+            id="documento"
+            inputmode="numeric"
+            autocomplete="off"
+            name="documento"
+            required placeholder=" "
+          >
+          <label for="documento">Número documento *</label>
+          <div class="error-num"></div>
+        </div>
+      </div>
+
+      <div class="content-parinput">
+        <div class="input-wrapper-content">
+          <input
+            type="text"
+            id="monto"
+            inputmode="numeric"
+            autocomplete="off"
+            name="monto"
+            required placeholder=" "
+          >
+          <label for="monto">Monto de crédito *</label>
+          <div class="error-monto"></div>
+        </div>
+  
+        <div class="input-wrapper-content">
+          <input
+            type="text"
+            id="telefono"
+            inputmode="numeric"
+            autocomplete="off"
+            minlength="10"
+            name="telefono"
+            pattern="(\(?(\+57)\)?)?(3)(\d{9})"
+            placeholder=" "
+          >
+          <label for="telefono">Número de celular</label>
+          <div class="error-telefono"></div>
+        </div>
+      </div>
+
+      <div class="content-checkbox">
+        <input
+          type="checkbox"
+          id="aceptar-terminos"
+          name="aceptar-terminos"
+          required
+        >
+        <p>He leído y acepto los <a href="https://www.corpezconstrucciones.co/terminos-y-condiciones" target="_blank">terminos y condiciones</a></p>
+        <div class="error-aceptar-terminos"></div>
+      </div>
+      <div id="authorizationUrl"></div>
+    <button type="submit" id="enviar">Enviar solicitud</button>
+  </form>
+</div>
+  <script src="appform.js"></script>
+</body>
+</html>
