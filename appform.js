@@ -88,17 +88,26 @@ function enviarFromulario(){
       const impurl = document.getElementById('authorizationUrl');
       const urlimp = document.createElement('DIV');
       urlimp.innerHTML = `
-      <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
-      <a href=${redirec} target="_blanck" class="btnurl">Continuar</a>`
+      <div class="contenedorVentanaModal">
+        <div class="ventanaModal entrada">
+          <h2>Vas por buen camino</h2>
+          <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
+          <div class="contenedorBtnsModal">
+            <a href=${redirec} target="_blanck" class="btnurl">Continuar</a>
+            <button id="cerrarModal" class="btnurl">Cancelar</button>
+          </div>
+        </div>
+      </div>`;
+
+      const cerrarModalBtn = urlimp.querySelector('#cerrarModal');
+      cerrarModalBtn.addEventListener('click', () => {
+        urlimp.remove();
+      });
       
       impurl.appendChild(urlimp);
-      console.log(redirec)
-
-      setTimeout(() => {
-        urlimp.remove()
-      }, 9000);
-
+  
     })
+
     .catch(error => {
       console.error('Error al obtener la URL de autorización:', error);
     });
