@@ -81,7 +81,8 @@ function enviarFromulario(){
       btn.innerHTML = 'Enviar solicitud';
       btn.disabled = false;
 
-      window.open(redirec, '_blank');
+      // window.open(redirec, '_blank');
+      window.location.href = redirec;
 
       
       // const impurl = document.getElementById('authorizationUrl');
@@ -98,7 +99,6 @@ function enviarFromulario(){
       // }, 9000);
 
       // Redirecciona al usuario a la pasarela
-      // window.location.href = redirec;
       
 
     })
