@@ -40,12 +40,12 @@ body {
 }
 
 .formulario-container {
-  background-color: #cfcfcf4d;
+  background-color: #dddddd62;
   width: 90%;
-  margin: 4.5rem 1.5rem;
+  margin: 4.5rem auto;
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 3px 3px 12px rgb(219, 219, 219);
+  /* box-shadow: 3px 3px 12px rgb(219, 219, 219); */
   animation: fadeInDown 1s ease;
 }
 
