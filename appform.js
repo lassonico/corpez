@@ -80,26 +80,23 @@ function enviarFromulario(){
       spinner.remove()
       btn.innerHTML = 'Enviar solicitud';
       btn.disabled = false;
-
-      // window.open(redirec, '_blank');
-      window.location.href = redirec;
-
-      
-      // const impurl = document.getElementById('authorizationUrl');
-      // const urlimp = document.createElement('DIV');
-      // urlimp.innerHTML = `
-      // <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
-      // <a href=${redirec} target="_blanck" class="btnurl">Continuar</a>`
-      
-      // impurl.appendChild(urlimp);
-      // console.log(redirec)
-
-      // setTimeout(() => {
-      //   urlimp.remove()
-      // }, 9000);
-
       // Redirecciona al usuario a la pasarela
+      // window.open(redirec, '_blank');
+      // window.location.href = redirec;
+
       
+      const impurl = document.getElementById('authorizationUrl');
+      const urlimp = document.createElement('DIV');
+      urlimp.innerHTML = `
+      <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
+      <a href=${redirec} target="_blanck" class="btnurl">Continuar</a>`
+      
+      impurl.appendChild(urlimp);
+      console.log(redirec)
+
+      setTimeout(() => {
+        urlimp.remove()
+      }, 9000);
 
     })
     .catch(error => {
