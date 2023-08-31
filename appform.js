@@ -90,7 +90,7 @@ function enviarFromulario(){
       urlimp.innerHTML = `
       <div class="contenedorVentanaModal">
         <div class="ventanaModal entrada">
-          <h2>Vas por buen camino</h2>
+          <h2>¡Excelente!</h2>
           <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
           <div class="contenedorBtnsModal">
             <a href=${redirec} target="_blanck" class="btnurl">Continuar</a>
@@ -98,7 +98,10 @@ function enviarFromulario(){
           </div>
         </div>
       </div>`;
-
+      const enviarsolicitud = urlimp.querySelector('.btnurl')
+      enviarsolicitud.addEventListener('click', () =>{
+        urlimp.remove();
+      })
       const cerrarModalBtn = urlimp.querySelector('#cerrarModal');
       cerrarModalBtn.addEventListener('click', () => {
         urlimp.remove();

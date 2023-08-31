@@ -40,7 +40,7 @@ body {
 }
 
 .formulario-container {
-  background-color: #dddddd62;
+  background-color: #dedede62;
   width: 90%;
   margin: 4.5rem auto;
   padding: 20px;
@@ -446,8 +446,8 @@ form .error{
   display: block;
   margin: 1rem auto;
   width: 50%;
-  padding: .6rem 1rem;
-  border-radius: 20px;
+  padding: .5rem 1rem;
+  border-radius: 23px;
   font-size: 1.1rem;
   font-weight: normal;
   text-align: center;
