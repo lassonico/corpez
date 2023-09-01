@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function enviarFromulario(){
 
   const formulario = document.querySelector('#transactionForm')
-  const monto = document.getElementById('monto').value;
+  const monto = parseInt(document.getElementById('monto').value);
   const tipoDoc = document.getElementById('tipoDoc').value;
   const documento = document.getElementById('documento').value;
   const nombre = document.getElementById('nombre').value;
@@ -65,10 +65,10 @@ function enviarFromulario(){
         'Authorization': idToken // Agregar el token de activación en el encabezado de autorización
       },
       body: JSON.stringify({
-        "monto": +monto,
+        "monto": monto,
         "referencia1": tipoDoc,
         "referencia2": documento,
-        "referencia3": nombre+apellido
+        "referencia3": nombre
       })
     })
     .then(respuesta => respuesta.json())
@@ -77,7 +77,7 @@ function enviarFromulario(){
       const redirec = datos.data.url;
 
       formulario.reset();
-      spinner.remove()
+      spinner.remove();
       btn.innerHTML = 'Enviar solicitud';
       btn.disabled = false;
       // Redirecciona al usuario a la pasarela
@@ -119,3 +119,5 @@ function enviarFromulario(){
     console.error('Error al generar el token de activación:', error);
   });
 }
+
+
