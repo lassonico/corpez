@@ -91,7 +91,7 @@ function realizarSegundaSolicitud(idToken, monto, tipoDoc, documento, nombre) {
 
     // Convertir los datos del cuerpo a formato JSON
     const datosCuerpoJSON = JSON.stringify(datosCuerpo);
-
+    console.log(datosCuerpoJSON)
     // Crear una nueva instancia de XMLHttpRequest para la segunda solicitud
     const xhrSegundaSolicitud = new XMLHttpRequest();
 
@@ -128,13 +128,14 @@ function realizarSegundaSolicitud(idToken, monto, tipoDoc, documento, nombre) {
                 <h2>¡Excelente!</h2>
                 <p class="textredirect">Serás direccionado a la pagina web de nuestro proveedor</p>
                 <div class="contenedorBtnsModal">
-                    <a href=${redireccionURL} target="_blanck" class="btnurl">Continuar</a>
+                    <button class="btnurl">Continuar</button>
                     <button id="cerrarModal" class="btnurl">Cancelar</button>
                 </div>
                 </div>
             </div>`;
             const enviarsolicitud = urlimp.querySelector('.btnurl')
             enviarsolicitud.addEventListener('click', () =>{
+                window.location.href = redireccionURL;
                 urlimp.remove();
             })
             const cerrarModalBtn = urlimp.querySelector('#cerrarModal');

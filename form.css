@@ -421,6 +421,7 @@ form .error{
 .btnurl{
   text-decoration: none;
   background-color: #007BFF;
+  border: none;
   color: white;
   display: block;
   margin: 1rem auto;
